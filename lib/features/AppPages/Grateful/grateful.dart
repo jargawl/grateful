@@ -104,6 +104,12 @@ class GratefulPage extends StatelessWidget {
             final itemModels = state.documents;
             return ListView(
               children: [
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: TextField(
+                    controller: controller,
+                  ),
+                ),
                 for (final itemModel in itemModels) ...[
                   BlocBuilder<GratefulCubit, GratefulState>(
                     builder: (context, state) {
@@ -122,9 +128,6 @@ class GratefulPage extends StatelessWidget {
                     },
                   ),
                 ],
-                TextField(
-                  controller: controller,
-                ),
               ],
             );
           },
