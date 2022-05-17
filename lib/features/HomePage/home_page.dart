@@ -52,6 +52,7 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 216, 228, 237),
         drawer: Drawer(
+          backgroundColor: const Color.fromARGB(255, 216, 228, 237),
           child: ListView(
             children: const [
               Grateful(),
@@ -64,7 +65,7 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: 5,
             ),
-            NameWidget('Twoja ilośc powodów do wdzięczności'),
+            NameWidget('Twoja ilość powodów do wdzięczności'),
             SizedBox(
               height: 5,
             ),
