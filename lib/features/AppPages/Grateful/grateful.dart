@@ -175,11 +175,13 @@ class NameWidget extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.all(10),
-      child: Text(
-        (name),
-        style: GoogleFonts.pacifico(
-          color: Colors.white,
-          fontSize: 23,
+      child: Center(
+        child: Text(
+          (name),
+          style: GoogleFonts.pacifico(
+            color: Colors.white,
+            fontSize: 23,
+          ),
         ),
       ),
     );
