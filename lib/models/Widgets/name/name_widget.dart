@@ -8,10 +8,10 @@ class NameWidget extends StatelessWidget {
   }) : super(key: key);
   final String name;
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 400,
       decoration: const BoxDecoration(
         color: Color.fromARGB(255, 23, 213, 169),
         borderRadius: BorderRadius.all(

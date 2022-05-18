@@ -104,11 +104,36 @@ class GratefulPage extends StatelessWidget {
             final itemModels = state.documents;
             return ListView(
               children: [
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: TextField(
+                    controller: controller,
+                  ),
+                ),
                 for (final itemModel in itemModels) ...[
                   BlocBuilder<GratefulCubit, GratefulState>(
                     builder: (context, state) {
                       return Dismissible(
                         key: ValueKey(itemModel.id),
+                        background: const DecoratedBox(
+                          child: Align(
+                            alignment: Alignment.centerRight,
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                right: 32,
+                              ),
+                              child: Icon(
+                                Icons.delete,
+                              ),
+                            ),
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                          ),
+                        ),
+                        confirmDismiss: (direction) async {
+                          return direction == DismissDirection.endToStart;
+                        },
                         onDismissed: (_) {
                           context.read<GratefulCubit>().delete(
                                 document: itemModel,
@@ -122,9 +147,6 @@ class GratefulPage extends StatelessWidget {
                     },
                   ),
                 ],
-                TextField(
-                  controller: controller,
-                ),
               ],
             );
           },
@@ -144,6 +166,7 @@ class NameWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 400,
       decoration: const BoxDecoration(
         color: Color.fromARGB(255, 23, 213, 169),
         borderRadius: BorderRadius.all(

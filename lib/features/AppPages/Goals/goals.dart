@@ -104,11 +104,34 @@ class GoalsGratefulPage extends StatelessWidget {
 
           return ListView(
             children: [
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextField(controller: controller),
+              ),
               for (final itemModel in itemModels) ...[
                 BlocBuilder<GoalsCubit, GoalsState>(
                   builder: (context, state) {
                     return Dismissible(
                       key: ValueKey(itemModel.id),
+                      background: const DecoratedBox(
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                              right: 32,
+                            ),
+                            child: Icon(
+                              Icons.delete,
+                            ),
+                          ),
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                        ),
+                      ),
+                      confirmDismiss: (direction) async {
+                        return direction == DismissDirection.endToStart;
+                      },
                       onDismissed: (_) {
                         context.read<GoalsCubit>().delete(
                               document: itemModel,
@@ -120,7 +143,6 @@ class GoalsGratefulPage extends StatelessWidget {
                   },
                 ),
               ],
-              TextField(controller: controller),
             ],
           );
         }),
