@@ -19,6 +19,7 @@ class _MotivationButtonState extends State<MotivationButton> {
   bool background = false;
   bool motivation = true;
   bool colorStyle = false;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
