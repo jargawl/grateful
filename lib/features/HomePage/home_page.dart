@@ -51,7 +51,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
         backgroundColor: const Color.fromARGB(255, 216, 228, 237),
-        drawer: Drawer( 
+        drawer: Drawer(
           backgroundColor: const Color.fromARGB(255, 216, 228, 237),
           child: ListView(
             children: const [
@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
               height: 5,
             ),
             GratefulCounter(),
-            NameWidget('Twoja liczba celi do realizowania '),
+            NameWidget('Twoja liczba celów do realizowania '),
             SizedBox(
               height: 5,
             ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:thankfulness/data/remote_data_sources/grateful_remote_data_source.dart';
 import 'package:thankfulness/features/AppPages/Grateful/cubit/grateful_cubit.dart';
 
 import 'package:thankfulness/repositories/grateful_repositories.dart';
@@ -64,7 +65,9 @@ class GratefulPage extends StatelessWidget {
       ),
       floatingActionButton: BlocProvider(
         create: (context) => GratefulCubit(
-          GratefulRepositories(),
+          GratefulRepositories(
+            GratefulRemoteDataSource(),
+          ),
         ),
         child: BlocBuilder<GratefulCubit, GratefulState>(
           builder: (context, state) {
@@ -85,7 +88,9 @@ class GratefulPage extends StatelessWidget {
       ),
       body: BlocProvider(
         create: (context) => GratefulCubit(
-          GratefulRepositories(),
+          GratefulRepositories(
+            GratefulRemoteDataSource(),
+          ),
         )..start(),
         child: BlocBuilder<GratefulCubit, GratefulState>(
           builder: (context, state) {

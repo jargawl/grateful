@@ -43,6 +43,7 @@ dependencies:
   flutterfire_ui: ^0.4.0+4
   firebase_auth: ^3.3.16
   rive: ^0.8.4
+  dio: ^4.0.6
 
 dev_dependencies:
   flutter_test:
