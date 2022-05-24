@@ -4,7 +4,6 @@ import 'package:thankfulness/models/Widgets/item/item_model.dart';
 
 class GratefulRepositories {
   final GratefulRemoteDataSource _gratefulRemoteDataSource;
-
   GratefulRepositories(this._gratefulRemoteDataSource);
 
   Stream<List<ItemModel>> getItemsStream() {
