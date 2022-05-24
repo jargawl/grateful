@@ -18,10 +18,12 @@ class MotivationButton extends StatefulWidget {
 }
 
 class _MotivationButtonState extends State<MotivationButton> {
+
   var names = false;
   var background = false;
   var colorStyle = false;
   bool myState = true;
+
 
   @override
   Widget build(BuildContext context) {

@@ -57,7 +57,7 @@ class GratefulPage extends StatelessWidget {
         title: Text(
           'Moje powody do wdzięczności',
           style: GoogleFonts.pacifico(
-            color: Colors.lightBlue,
+            color: const Color.fromARGB(255, 47, 184, 129),
             fontSize: 20,
           ),
         ),
@@ -175,11 +175,13 @@ class NameWidget extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.all(10),
-      child: Text(
-        (name),
-        style: GoogleFonts.pacifico(
-          color: Colors.white,
-          fontSize: 23,
+      child: Center(
+        child: Text(
+          (name),
+          style: GoogleFonts.pacifico(
+            color: Colors.white,
+            fontSize: 23,
+          ),
         ),
       ),
     );
