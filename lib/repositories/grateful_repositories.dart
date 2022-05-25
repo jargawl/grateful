@@ -13,7 +13,7 @@ class GratefulRepositories {
     }
     return _gratefulRemoteDataSource.gratefulRemoteData().map(
       (querySnapshot) {
-        return querySnapshot.docs.map((doc) {
+        return querySnapshot!.docs.map((doc) {
           return ItemModel(
             name: doc['name'],
             id: doc.id,
