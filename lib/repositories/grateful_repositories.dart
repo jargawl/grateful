@@ -23,12 +23,14 @@ class GratefulRepositories {
     );
   }
 
-  Future<void> delete({required String id}) {
+  Future<void> delete({
+    required String id,
+  }) {
     final userID = FirebaseAuth.instance.currentUser?.uid;
     if (userID == null) {
       Exception('Jesteś nie zalogowany');
     }
-    return _gratefulRemoteDataSource.delete(id: '');
+    return _gratefulRemoteDataSource.delete(id: id);
   }
 
   Future<void> add({required String name}) {
@@ -36,7 +38,7 @@ class GratefulRepositories {
     if (userID == null) {
       Exception('Jesteś nie zalogowany');
     }
-    return _gratefulRemoteDataSource.add(name: '');
+    return _gratefulRemoteDataSource.add(name: name);
   }
 
   Future<int?> getCount() async {
