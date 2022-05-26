@@ -44,6 +44,8 @@ dependencies:
   firebase_auth: ^3.3.16
   rive: ^0.8.4
   dio: ^4.0.6
+  flutter_facebook_auth: ^4.3.4
+  google_sign_in: ^5.3.2
 
 dev_dependencies:
   flutter_test:
