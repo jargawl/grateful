@@ -3,8 +3,8 @@ import 'package:thankfulness/data/remote_data_sources/grateful_remote_data_sourc
 import 'package:thankfulness/models/Widgets/item/item_model.dart';
 
 class GratefulRepositories {
-  final GratefulRemoteDataSource _gratefulRemoteDataSource;
   GratefulRepositories(this._gratefulRemoteDataSource);
+  final GratefulRemoteDataSource _gratefulRemoteDataSource;
 
   Stream<List<ItemModel>> getItemsStream() {
     final userID = FirebaseAuth.instance.currentUser?.uid;
@@ -23,9 +23,7 @@ class GratefulRepositories {
     );
   }
 
-  Future<void> delete({
-    required String id,
-  }) {
+  Future<void> delete({required String id}) {
     final userID = FirebaseAuth.instance.currentUser?.uid;
     if (userID == null) {
       Exception('Jesteś nie zalogowany');
