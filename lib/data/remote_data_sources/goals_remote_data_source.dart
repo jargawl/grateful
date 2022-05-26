@@ -13,31 +13,31 @@ class GoalsRemoteDataSource {
         .collection('goals')
         .snapshots();
   }
-}
 
-Future<void> delete({required String id}) {
-  final userID = FirebaseAuth.instance.currentUser?.uid;
-  if (userID == null) {
-    Exception('Jesteś nie zalogowany');
+  Future<void> delete({required String id}) {
+    final userID = FirebaseAuth.instance.currentUser?.uid;
+    if (userID == null) {
+      Exception('Jesteś nie zalogowany');
+    }
+    return FirebaseFirestore.instance
+        .collection('users')
+        .doc(userID)
+        .collection('goals')
+        .doc(id)
+        .delete();
   }
-  return FirebaseFirestore.instance
-      .collection('users')
-      .doc(userID)
-      .collection('goals')
-      .doc(id)
-      .delete();
-}
 
-Future<void> add({required String name}) {
-  final userID = FirebaseAuth.instance.currentUser?.uid;
-  if (userID == null) {
-    Exception('Jesteś nie zalogowany');
+  Future<void> add({required String name}) {
+    final userID = FirebaseAuth.instance.currentUser?.uid;
+    if (userID == null) {
+      Exception('Jesteś nie zalogowany');
+    }
+    return FirebaseFirestore.instance
+        .collection('users')
+        .doc(userID)
+        .collection('goals')
+        .add({'name': name});
   }
-  return FirebaseFirestore.instance
-      .collection('users')
-      .doc(userID)
-      .collection('goals')
-      .add({'name': name});
 }
 
 Future<int?> getCount() async {
