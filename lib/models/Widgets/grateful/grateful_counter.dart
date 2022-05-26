@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rive/rive.dart';
 import 'package:thankfulness/App/core/enums.dart';
+import 'package:thankfulness/data/remote_data_sources/grateful_remote_data_source.dart';
 import 'package:thankfulness/models/Widgets/grateful/cubit/grateful_counter_cubit.dart';
 import 'package:thankfulness/repositories/grateful_repositories.dart';
 
@@ -14,8 +15,10 @@ class GratefulCounter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          GratefulCounterCubit(GratefulRepositories())..start(),
+      create: (context) => GratefulCounterCubit(GratefulRepositories(
+        GratefulRemoteDataSource(),
+      ))
+        ..start(),
       child: Container(
         decoration: const BoxDecoration(
           color: Colors.yellow,

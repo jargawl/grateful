@@ -11,7 +11,10 @@ class GratefulCubit extends Cubit<GratefulState> {
   GratefulCubit(this._itemRepositories)
       : super(
           const GratefulState(
-              documents: [], errorMessage: '', status: Status.initial),
+            documents: [],
+            errorMessage: '',
+            status: Status.initial,
+          ),
         );
   StreamSubscription? _streamSubscription;
   final GratefulRepositories _itemRepositories;
