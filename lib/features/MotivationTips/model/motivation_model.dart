@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+part 'motivation_model.g.dart';
+
+@JsonSerializable()
+
 class MotivationModel {
   const MotivationModel({
     required this.id,
@@ -9,8 +14,8 @@ class MotivationModel {
   final String contents;
   final String name;
 
-  MotivationModel.fromJson(Map<String, dynamic> json)
-      : id = json['id'],
-        contents = json['contents'],
-        name = json['name'];
+   factory MotivationModel.fromJson(Map<String, dynamic> json) => _$MotivationModelFromJson(json);
+
+Map<String, dynamic> toJson() => _$MotivationModelToJson(this);
+
 }
