@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:thankfulness/App/core/enums.dart';
 import 'package:thankfulness/features/MotivationTips/model/motivation_model.dart';
 import 'package:thankfulness/features/MotivationTips/repositories/motivation_repository.dart';
@@ -8,6 +9,7 @@ import 'package:thankfulness/features/MotivationTips/repositories/motivation_rep
 part 'motivation_state.dart';
 part 'motivation_cubit.freezed.dart';
 
+@injectable
 class MotivationCubit extends Cubit<MotivationState> {
   MotivationCubit({required this.motivationRepository}) : super(MotivationState());
 

@@ -8,10 +8,7 @@ part of 'motivation_data_source.dart';
 
 class _MotivationRemoteRetrofitDataSource
     implements MotivationRemoteRetrofitDataSource {
-  _MotivationRemoteRetrofitDataSource(this._dio, {this.baseUrl}) {
-    baseUrl ??=
-        'http://my-json-server.typicode.com/iwonarudzinska/Examples-of-gratitude-json';
-  }
+  _MotivationRemoteRetrofitDataSource(this._dio, {this.baseUrl});
 
   final Dio _dio;
 
