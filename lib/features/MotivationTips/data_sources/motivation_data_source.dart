@@ -1,26 +1,12 @@
 import 'package:dio/dio.dart';
+import 'package:retrofit/retrofit.dart';
+import 'package:thankfulness/features/MotivationTips/model/motivation_model.dart';
+part 'motivation_data_source.g.dart';
 
-class MotivationMockedDataSource {
-  Future<List<Map<String, dynamic>>?> getMotivation() async {
-    return [
-      {
-        'id': 1,
-        'contents': 'contents',
-        'name': 'name',
-      },
-    ];
-  }
-}
+@RestApi(baseUrl: "http://my-json-server.typicode.com/iwonarudzinska/Examples-of-gratitude-json")
+abstract class MotivationRemoteRetrofitDataSource {
+  factory MotivationRemoteRetrofitDataSource(Dio dio, {String baseUrl}) = _MotivationRemoteRetrofitDataSource;
 
-
-class MotivationRemoteDioDataSource {
-  Future<List<Map<String, dynamic>>?> getMotivation() async {
-    final response = await Dio().get<List<dynamic>>(
-        'http://my-json-server.typicode.com/iwonarudzinska/Examples-of-gratitude-json/gratitude');
-    final listDynamic = response.data;
-    if (listDynamic == null) {
-      return null;
-    }
-    return listDynamic.map((e) => e as Map<String, dynamic>).toList();
-  }
+  @GET("/gratitude")
+  Future<List<MotivationModel>> getMotivation();
 }
