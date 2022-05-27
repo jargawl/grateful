@@ -71,9 +71,9 @@ class HomePage extends StatelessWidget {
               height: 5,
             ),
 
-            GratefulCounter(),
-            NameWidget('Twoja liczba celów do realizowania '),
-            SizedBox(
+            const GratefulCounter(),
+            const NameWidget('Twoja liczba celów do realizowania '),
+            const SizedBox(
 
               height: 5,
             ),

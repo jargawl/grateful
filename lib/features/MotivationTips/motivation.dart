@@ -5,18 +5,22 @@ import 'package:thankfulness/App/injection_container.dart';
 import 'package:thankfulness/features/MotivationTips/cubit/motivation_cubit.dart';
 import 'package:thankfulness/features/MotivationTips/model/motivation_model.dart';
 
-
-
 class MotivationPage extends StatelessWidget {
   const MotivationPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(25),
+          ),
+        ),
+      ),
       body: BlocProvider<MotivationCubit>(
         create: (context) {
-          return getIt()
-          ..start();
+          return getIt()..start();
         },
         child: BlocBuilder<MotivationCubit, MotivationState>(
           builder: (context, state) {
