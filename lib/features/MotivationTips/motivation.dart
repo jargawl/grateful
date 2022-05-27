@@ -35,6 +35,18 @@ class MotivationPage extends StatelessWidget {
               case Status.success:
                 return ListView(
                   children: [
+                    const Text(
+                      'Odnajdź inspirację do wdzięczności, dzięki podpowiedziom:',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 23, 213, 169),
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
                     for (final motivation in state.results)
                       MotivationItemWidget(
                         model: motivation,
@@ -68,7 +80,7 @@ class MotivationItemWidget extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Color.fromARGB(255, 136, 199, 192),
+            color: Color.fromARGB(255, 23, 213, 169),
             offset: Offset(6, 6),
             blurRadius: 6,
           ),
@@ -77,19 +89,23 @@ class MotivationItemWidget extends StatelessWidget {
       child: Expanded(
         child: Column(
           children: [
-            Text(
-              model.contents,
-              style: const TextStyle(fontSize: 20),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
             Container(
-              color: const Color.fromARGB(255, 241, 166, 160),
+              color: Colors.amber,
               child: Text(
                 model.name,
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              model.contents,
+              style: const TextStyle(fontSize: 20, color: Colors.white),
+              textAlign: TextAlign.center,
             ),
             const SizedBox(
               height: 40,

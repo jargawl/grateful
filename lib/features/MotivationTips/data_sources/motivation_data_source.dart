@@ -5,8 +5,8 @@ class MotivationMockedDataSource {
     return [
       {
         'id': 1,
-        'contents': 'aaa',
-        'name': 'Iwona',
+        'contents': 'contents',
+        'name': 'name',
       },
     ];
   }
@@ -16,7 +16,7 @@ class MotivationMockedDataSource {
 class MotivationRemoteDioDataSource {
   Future<List<Map<String, dynamic>>?> getMotivation() async {
     final response = await Dio().get<List<dynamic>>(
-        'http://my-json-server.typicode.com/iwonarudzinska/citationsjson/citations');
+        'http://my-json-server.typicode.com/iwonarudzinska/Examples-of-gratitude-json/gratitude');
     final listDynamic = response.data;
     if (listDynamic == null) {
       return null;

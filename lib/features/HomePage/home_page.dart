@@ -80,25 +80,7 @@ class HomePage extends StatelessWidget {
               height: 5,
             ),
             const MotivationButton(),
-            // Expanded(
-            //   child: TextButton(
-            //     onPressed: () {
-            //       Navigator.of(context).push(
-            //         MaterialPageRoute(
-            //           builder: (_) => const MotivationPage(),
-            //         ),
-            //       );
-            //     },
-            //     child: const Text(
-            //       'KLIK',
-            //       style: TextStyle(color: Colors.red),
-            //     ),
-            //   ),
-            // ),
             Expanded(
-              // child: Image(
-              //     image: NetworkImage(
-              //         'https://monophy.com/media/Ti1di8f2P5eWaJBZNr/monophy.gif')),
               child: InkWell(
                 onTap: () {
                   Navigator.of(context).push(
