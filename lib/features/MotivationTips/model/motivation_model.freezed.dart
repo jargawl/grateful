@@ -139,7 +139,7 @@ class _$_MotivationModel implements _MotivationModel {
   _$_MotivationModel(this.id, this.contents, this.name);
 
   factory _$_MotivationModel.fromJson(Map<String, dynamic> json) =>
-      _$$_MotivationModelFromJson(json);
+      $$MotivationModelFromJson(json);
 
   @override
   final int id;
@@ -177,7 +177,7 @@ class _$_MotivationModel implements _MotivationModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MotivationModelToJson(this);
+    return $$MotivationModelToJson(this);
   }
 }
 
