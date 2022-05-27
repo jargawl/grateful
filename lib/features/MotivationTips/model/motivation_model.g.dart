@@ -6,14 +6,14 @@ part of 'motivation_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MotivationModel _$MotivationModelFromJson(Map<String, dynamic> json) =>
-    MotivationModel(
-      id: json['id'] as int,
-      contents: json['contents'] as String,
-      name: json['name'] as String,
+_$_MotivationModel _$$_MotivationModelFromJson(Map<String, dynamic> json) =>
+    _$_MotivationModel(
+      json['id'] as int,
+      json['contents'] as String,
+      json['name'] as String,
     );
 
-Map<String, dynamic> _$MotivationModelToJson(MotivationModel instance) =>
+Map<String, dynamic> _$$_MotivationModelToJson(_$_MotivationModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'contents': instance.contents,

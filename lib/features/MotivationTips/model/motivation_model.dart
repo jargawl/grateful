@@ -1,21 +1,16 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'motivation_model.g.dart';
+part 'motivation_model.freezed.dart';
 
-@JsonSerializable()
 
-class MotivationModel {
-  const MotivationModel({
-    required this.id,
-    required this.contents,
-    required this.name,
-  });
+@freezed
+class MotivationModel with _$MotivationModel {
+  factory MotivationModel(
+    int id,
+    String contents,
+    String name,
+    ) = _MotivationModel;
 
-  final int id;
-  final String contents;
-  final String name;
-
-   factory MotivationModel.fromJson(Map<String, dynamic> json) => _$MotivationModelFromJson(json);
-
-Map<String, dynamic> toJson() => _$MotivationModelToJson(this);
-
+  factory MotivationModel.fromJson(Map<String, dynamic> json) => _$MotivationModelFromJson(json);
 }
