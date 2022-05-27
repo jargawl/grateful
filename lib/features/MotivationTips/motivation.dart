@@ -1,12 +1,11 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thankfulness/App/core/enums.dart';
+import 'package:thankfulness/App/injection_container.dart';
 import 'package:thankfulness/features/MotivationTips/cubit/motivation_cubit.dart';
-import 'package:thankfulness/features/MotivationTips/data_sources/motivation_data_source.dart';
 import 'package:thankfulness/features/MotivationTips/model/motivation_model.dart';
 
-import 'repositories/motivation_repository.dart';
+
 
 class MotivationPage extends StatelessWidget {
   const MotivationPage({Key? key}) : super(key: key);
@@ -16,11 +15,8 @@ class MotivationPage extends StatelessWidget {
     return Scaffold(
       body: BlocProvider<MotivationCubit>(
         create: (context) {
-          return MotivationCubit(
-            motivationRepository: MotivationRepository(
-              remoteDataSource: MotivationRemoteRetrofitDataSource(Dio()),
-            ),
-          )..start();
+          return getIt()
+          ..start();
         },
         child: BlocBuilder<MotivationCubit, MotivationState>(
           builder: (context, state) {
