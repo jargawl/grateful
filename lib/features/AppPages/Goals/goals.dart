@@ -38,6 +38,7 @@ class Goals extends StatelessWidget {
         color: const Color.fromARGB(255, 23, 213, 169),
       ),
     );
+    
   }
 }
 
