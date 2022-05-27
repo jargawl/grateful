@@ -6,6 +6,7 @@ import 'package:thankfulness/features/Auth/pages/user_profile.dart';
 import 'package:thankfulness/models/Widgets/goals/goals_counter.dart';
 import 'package:thankfulness/models/Widgets/grateful/grateful_counter.dart';
 import 'package:thankfulness/models/Widgets/motivationButton/motivation_button.dart';
+import 'package:thankfulness/features/MotivationTips/motivation.dart';
 
 import '../AppPages/Grateful/grateful.dart';
 
@@ -61,28 +62,55 @@ class HomePage extends StatelessWidget {
           ),
         ),
         body: Column(
-          children: const [
-            SizedBox(
+          children: [
+            const SizedBox(
               height: 5,
             ),
-            NameWidget('Twoja ilość powodów do wdzięczności'),
-            SizedBox(
+            const NameWidget('Twoja ilość powodów do wdzięczności'),
+            const SizedBox(
               height: 5,
             ),
-            GratefulCounter(),
-            NameWidget('Twoja liczba celi do realizowania '),
-            SizedBox(
+            const GratefulCounter(),
+            const NameWidget('Twoja liczba celi do realizowania '),
+            const SizedBox(
               height: 5,
             ),
-            GoalsCounter(),
-            SizedBox(
+            const GoalsCounter(),
+            const SizedBox(
               height: 5,
             ),
-            MotivationButton(),
+            const MotivationButton(),
+            // Expanded(
+            //   child: TextButton(
+            //     onPressed: () {
+            //       Navigator.of(context).push(
+            //         MaterialPageRoute(
+            //           builder: (_) => const MotivationPage(),
+            //         ),
+            //       );
+            //     },
+            //     child: const Text(
+            //       'KLIK',
+            //       style: TextStyle(color: Colors.red),
+            //     ),
+            //   ),
+            // ),
             Expanded(
-              child: RiveAnimation.asset(
-                'assets/a.riv',
-                alignment: Alignment.bottomCenter,
+              // child: Image(
+              //     image: NetworkImage(
+              //         'https://monophy.com/media/Ti1di8f2P5eWaJBZNr/monophy.gif')),
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const MotivationPage(),
+                    ),
+                  );
+                },
+                child: const RiveAnimation.asset(
+                  'assets/a.riv',
+                  alignment: Alignment.bottomCenter,
+                ),
               ),
             ),
           ],

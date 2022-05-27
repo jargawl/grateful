@@ -18,12 +18,10 @@ class MotivationButton extends StatefulWidget {
 }
 
 class _MotivationButtonState extends State<MotivationButton> {
-
   var names = false;
   var background = false;
   var colorStyle = false;
   bool myState = true;
-
 
   @override
   Widget build(BuildContext context) {
@@ -67,51 +65,56 @@ class _MotivationButtonState extends State<MotivationButton> {
                   ),
                 );
               }
-              return Column(
-                children: [
-                  if (randomInt == 0)
-                    Text(
-                      myState == true
-                          ? 'Motywacyjny cytat od Miśka'
-                          : 'Najwyższą nagrodą za trud człowieka nie jest to, co on dostaje za to, ale kim przez to się staje.\n\n- John Ruskin',
-                      style: colorStyle
-                          ? GoogleFonts.pacifico(
-                              color: Colors.white,
-                              fontSize: 23,
-                            )
-                          : GoogleFonts.pacifico(
-                              color: const Color.fromARGB(255, 23, 213, 169),
-                              fontSize: 23),
-                    ),
-                  if (randomInt == 1)
-                    Text(
-                      myState == true
-                          ? 'Motywacyjny cytat od Miśka'
-                          : 'Ucz się z przeszłości, żyj dniem dzisiejszym, miej nadzieję na przyszłość. Ważną rzeczą jest, abyś nie przestał pytać.\n\n- Albert Einstein',
-                      style: colorStyle
-                          ? GoogleFonts.pacifico(
-                              color: Colors.white,
-                              fontSize: 23,
-                            )
-                          : GoogleFonts.pacifico(
-                              color: const Color.fromARGB(255, 23, 213, 169),
-                              fontSize: 23),
-                    ),
-                  if (randomInt == 2)
-                    Text(
-                      myState == true
-                          ? 'Motywacyjny cytat od Miśka'
-                          : 'Pamiętaj, szczęście nie zależy od tego, kim jesteś, ani od tego, co masz, ono zależy wyłącznie od tego, co myślisz.\n\n- Dale Carnegie',
-                      style: colorStyle
-                          ? GoogleFonts.pacifico(
-                              color: Colors.white,
-                              fontSize: 23,
-                            )
-                          : GoogleFonts.pacifico(
-                              color: const Color.fromARGB(255, 23, 213, 169),
-                              fontSize: 23),
-                    ),
-                ],
+              return Expanded(
+                child: Column(
+                  children: [
+                    if (randomInt == 0)
+                      Text(
+                        myState == true
+                            ? 'Motywacyjny cytat od Miśka'
+                            : 'Najwyższą nagrodą za trud człowieka nie jest to, co on dostaje za to, ale kim przez to się staje.\n\n- John Ruskin',
+                        style: colorStyle
+                            ? GoogleFonts.pacifico(
+                                color: Colors.white,
+                                fontSize: 23,
+                              )
+                            : GoogleFonts.pacifico(
+                                color:
+                                    const Color.fromARGB(255, 23, 213, 169),
+                                fontSize: 23),
+                      ),
+                    if (randomInt == 1)
+                      Text(
+                        myState == true
+                            ? 'Motywacyjny cytat od Miśka'
+                            : 'Ucz się z przeszłości, żyj dniem dzisiejszym, miej nadzieję na przyszłość. Ważną rzeczą jest, abyś nie przestał pytać.\n\n- Albert Einstein',
+                        style: colorStyle
+                            ? GoogleFonts.pacifico(
+                                color: Colors.white,
+                                fontSize: 23,
+                              )
+                            : GoogleFonts.pacifico(
+                                color:
+                                    const Color.fromARGB(255, 23, 213, 169),
+                                fontSize: 23),
+                      ),
+                    if (randomInt == 2)
+                      Text(
+                        myState == true
+                            ? 'Motywacyjny cytat od Miśka'
+                            : 'Pamiętaj, szczęście nie zależy od tego, kim jesteś, ani od tego, co masz, ono zależy wyłącznie od tego, co myślisz.\n\n- Dale Carnegie',
+                        style: colorStyle
+                            ? GoogleFonts.pacifico(
+                                color: Colors.white,
+                                fontSize: 23,
+                              )
+                            : GoogleFonts.pacifico(
+                                color:
+                                    const Color.fromARGB(255, 23, 213, 169),
+                                fontSize: 23),
+                      ),
+                  ],
+                ),
               );
             },
           ),
