@@ -106,7 +106,7 @@ class MotivationItemWidget extends StatelessWidget {
             Text(
               model.contents,
               style: GoogleFonts.pacifico(
-                color: Color.fromARGB(255, 255, 255, 255),
+                color: const Color.fromARGB(255, 255, 255, 255),
                 fontSize: 20,
               ),
               textAlign: TextAlign.center,
