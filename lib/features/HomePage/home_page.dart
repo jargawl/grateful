@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rive/rive.dart';
+import 'package:thankfulness/App/core/config.dart';
 import 'package:thankfulness/features/AppPages/Goals/goals.dart';
 import 'package:thankfulness/features/Auth/pages/user_profile.dart';
 import 'package:thankfulness/models/Widgets/goals/goals_counter.dart';
@@ -45,6 +46,7 @@ class HomePage extends StatelessWidget {
           title: Center(
             child: Text(
               (AppLocalizations.of(context)!.yourNumberOfReasonsToBeGrateful),
+              semanticsLabel: Config.title,
               style: GoogleFonts.pacifico(
                 color: const Color.fromARGB(255, 23, 213, 169),
                 fontSize: 20,

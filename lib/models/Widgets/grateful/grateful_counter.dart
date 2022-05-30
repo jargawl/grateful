@@ -48,7 +48,7 @@ class GratefulCounter extends StatelessWidget {
             return Text(
               state.count.length.toString(),
               style: GoogleFonts.pacifico(
-                color: Colors.white,
+                color: Colors.black54,
                 fontSize: 23,
               ),
             );
