@@ -49,9 +49,6 @@ class AuthGate extends StatelessWidget {
               },
               providerConfigs: const [
                 EmailProviderConfiguration(),
-                FacebookProviderConfiguration(
-                  clientId: '365412425446516',
-                )
               ],
             ),
           );
