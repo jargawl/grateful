@@ -45,11 +45,11 @@ class HomePage extends StatelessWidget {
           ),
           title: Center(
             child: Text(
-              (AppLocalizations.of(context)!.yourNumberOfReasonsToBeGrateful),
+              (AppLocalizations.of(context)!.titleGrateful),
               semanticsLabel: Config.title,
               style: GoogleFonts.pacifico(
                 color: const Color.fromARGB(255, 23, 213, 169),
-                fontSize: 20,
+                fontSize: 25,
               ),
             ),
           ),
