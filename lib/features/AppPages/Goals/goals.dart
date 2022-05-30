@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:thankfulness/App/core/config.dart';
 import 'package:thankfulness/App/core/enums.dart';
 import 'package:thankfulness/data/remote_data_sources/goals_remote_data_source.dart';
 import 'package:thankfulness/repositories/goals_repositories.dart';
@@ -28,7 +29,7 @@ class Goals extends StatelessWidget {
         margin: const EdgeInsets.all(10),
         child: Center(
           child: Text(
-            'Moje cele',
+            Config.goals,
             style: GoogleFonts.pacifico(
               color: Colors.white,
               fontSize: 30,
@@ -38,7 +39,6 @@ class Goals extends StatelessWidget {
         color: const Color.fromARGB(255, 23, 213, 169),
       ),
     );
-    
   }
 }
 

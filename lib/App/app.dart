@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thankfulness/App/core/config.dart';
 import '../features/Auth/pages/auth_gate.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: Config.debugShowCheckedModeBanner,
       title: 'Grateful',
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xEDEBE8E8),
