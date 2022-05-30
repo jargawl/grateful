@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:thankfulness/App/core/enums.dart';
 import 'package:thankfulness/App/injection_container.dart';
 import 'package:thankfulness/features/MotivationTips/cubit/motivation_cubit.dart';
 import 'package:thankfulness/features/MotivationTips/model/motivation_model.dart';
-
-
 
 class MotivationPage extends StatelessWidget {
   const MotivationPage({Key? key}) : super(key: key);
@@ -13,10 +12,16 @@ class MotivationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(25),
+          ),
+        ),
+      ),
       body: BlocProvider<MotivationCubit>(
         create: (context) {
-          return getIt()
-          ..start();
+          return getIt()..start();
         },
         child: BlocBuilder<MotivationCubit, MotivationState>(
           builder: (context, state) {
@@ -32,12 +37,11 @@ class MotivationPage extends StatelessWidget {
               case Status.success:
                 return ListView(
                   children: [
-                    const Text(
+                    Text(
                       'Odnajdź inspirację do wdzięczności, dzięki podpowiedziom:',
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 23, 213, 169),
+                      style: GoogleFonts.pacifico(
+                        color: const Color.fromARGB(255, 23, 213, 169),
+                        fontSize: 35,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -90,9 +94,9 @@ class MotivationItemWidget extends StatelessWidget {
               color: Colors.amber,
               child: Text(
                 model.name,
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                style: GoogleFonts.pacifico(
+                  color: const Color.fromARGB(255, 23, 213, 169),
+                  fontSize: 25,
                 ),
               ),
             ),
@@ -101,7 +105,10 @@ class MotivationItemWidget extends StatelessWidget {
             ),
             Text(
               model.contents,
-              style: const TextStyle(fontSize: 20, color: Colors.white),
+              style: GoogleFonts.pacifico(
+                color: const Color.fromARGB(255, 255, 255, 255),
+                fontSize: 20,
+              ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(

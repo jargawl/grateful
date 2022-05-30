@@ -1,21 +1,19 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:thankfulness/data/remote_data_sources/grateful_remote_data_source.dart';
 import 'package:thankfulness/models/Widgets/item/item_model.dart';
 
 class GratefulRepositories {
+  GratefulRepositories(this._gratefulRemoteDataSource);
+  final GratefulRemoteDataSource _gratefulRemoteDataSource;
+
   Stream<List<ItemModel>> getItemsStream() {
     final userID = FirebaseAuth.instance.currentUser?.uid;
     if (userID == null) {
       Exception('Jesteś nie zalogowany');
     }
-    return FirebaseFirestore.instance
-        .collection('users')
-        .doc(userID)
-        .collection('grateful')
-        .snapshots()
-        .map(
+    return _gratefulRemoteDataSource.gratefulRemoteData().map(
       (querySnapshot) {
-        return querySnapshot.docs.map((doc) {
+        return querySnapshot!.docs.map((doc) {
           return ItemModel(
             name: doc['name'],
             id: doc.id,
@@ -30,12 +28,7 @@ class GratefulRepositories {
     if (userID == null) {
       Exception('Jesteś nie zalogowany');
     }
-    return FirebaseFirestore.instance
-        .collection('users')
-        .doc(userID)
-        .collection('grateful')
-        .doc(id)
-        .delete();
+    return _gratefulRemoteDataSource.delete(id: id);
   }
 
   Future<void> add({required String name}) {
@@ -43,11 +36,7 @@ class GratefulRepositories {
     if (userID == null) {
       Exception('Jesteś nie zalogowany');
     }
-    return FirebaseFirestore.instance
-        .collection('users')
-        .doc(userID)
-        .collection('grateful')
-        .add({'name': name});
+    return _gratefulRemoteDataSource.add(name: name);
   }
 
   Future<int?> getCount() async {
@@ -55,11 +44,7 @@ class GratefulRepositories {
     if (userID == null) {
       Exception('Jesteś nie zalogowany');
     }
-    FirebaseFirestore.instance
-        .collection('users')
-        .doc(userID)
-        .collection('grateful')
-        .snapshots();
+    _gratefulRemoteDataSource;
     return null;
   }
 }
