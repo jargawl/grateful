@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:thankfulness/App/core/config.dart';
 import 'package:thankfulness/data/remote_data_sources/grateful_remote_data_source.dart';
 import 'package:thankfulness/features/AppPages/Grateful/cubit/grateful_cubit.dart';
+import 'package:thankfulness/models/Widgets/name/name_widget.dart';
 import 'package:thankfulness/repositories/grateful_repositories.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../App/core/enums.dart';
@@ -146,8 +147,7 @@ class GratefulPage extends StatelessWidget {
                                 id: itemModel.id,
                               );
                         },
-                        child: NameWidgetAchive(
-                          //nie wiem czy NameWidgetAchive czy NameWitgetGrateful
+                        child: NameWidget(
                           itemModel.name,
                         ),
                       );
@@ -182,7 +182,7 @@ class NameWidgetAchive extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.all(10),
       child: Text(
-        (AppLocalizations.of(context)!.yourNumberOfGoalsToAchieve),
+        (AppLocalizations.of(context)!.yourNumberOfReasonsToBeGrateful),
         style: GoogleFonts.pacifico(
           color: Colors.white,
           fontSize: 23,
@@ -212,7 +212,7 @@ class NameWidgetGrateful extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.all(10),
       child: Text(
-        (AppLocalizations.of(context)!.yourNumberOfReasonsToBeGrateful),
+        (AppLocalizations.of(context)!.yourNumberOfGoalsToAchieve),
         style: GoogleFonts.pacifico(
           color: Colors.white,
           fontSize: 23,

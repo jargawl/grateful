@@ -21,7 +21,7 @@ class Goals extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) => GoalsGratefulPage(),
+            builder: (_) => GoalsPage(),
           ),
         );
       },
@@ -44,8 +44,8 @@ class Goals extends StatelessWidget {
   }
 }
 
-class GoalsGratefulPage extends StatelessWidget {
-  GoalsGratefulPage({Key? key}) : super(key: key);
+class GoalsPage extends StatelessWidget {
+  GoalsPage({Key? key}) : super(key: key);
 
   final controller = TextEditingController();
 

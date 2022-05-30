@@ -49,7 +49,7 @@ class GoalsCounter extends StatelessWidget {
             return Text(
               state.count.length.toString(),
               style: GoogleFonts.pacifico(
-                color: Colors.black54,
+                color: const Color.fromARGB(255, 23, 213, 169),
                 fontSize: 23,
               ),
             );
