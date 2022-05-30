@@ -4,10 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:thankfulness/App/core/enums.dart';
 import 'package:thankfulness/data/remote_data_sources/goals_remote_data_source.dart';
 import 'package:thankfulness/repositories/goals_repositories.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../models/Widgets/name/name_widget.dart';
 import 'cubit/goals_cubit.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class Goals extends StatelessWidget {
   const Goals({

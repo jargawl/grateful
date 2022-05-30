@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../features/Auth/pages/auth_gate.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import '../features/Auth/pages/auth_gate.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MyApp extends StatelessWidget {
