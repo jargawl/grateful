@@ -7,6 +7,7 @@ import 'package:thankfulness/repositories/goals_repositories.dart';
 
 import '../../../models/Widgets/name/name_widget.dart';
 import 'cubit/goals_cubit.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Goals extends StatelessWidget {
   const Goals({
@@ -28,7 +29,7 @@ class Goals extends StatelessWidget {
         margin: const EdgeInsets.all(10),
         child: Center(
           child: Text(
-            'Moje cele',
+            AppLocalizations.of(context)!.myGoals,
             style: GoogleFonts.pacifico(
               color: Colors.white,
               fontSize: 30,
@@ -57,7 +58,7 @@ class GoalsGratefulPage extends StatelessWidget {
           ),
         ),
         title: Text(
-          'Moje cele do zrealizowania',
+          (AppLocalizations.of(context)!.myGoalsToBeAchieved),
           style: GoogleFonts.pacifico(
             color: const Color.fromARGB(255, 23, 213, 169),
             fontSize: 25,

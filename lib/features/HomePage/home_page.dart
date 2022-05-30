@@ -7,6 +7,7 @@ import 'package:thankfulness/models/Widgets/goals/goals_counter.dart';
 import 'package:thankfulness/models/Widgets/grateful/grateful_counter.dart';
 import 'package:thankfulness/models/Widgets/motivationButton/motivation_button.dart';
 import 'package:thankfulness/features/MotivationTips/motivation.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../AppPages/Grateful/grateful.dart';
 
@@ -43,10 +44,10 @@ class HomePage extends StatelessWidget {
           ),
           title: Center(
             child: Text(
-              'Wdzięczność',
+              (AppLocalizations.of(context)!.yourNumberOfReasonsToBeGrateful),
               style: GoogleFonts.pacifico(
                 color: const Color.fromARGB(255, 23, 213, 169),
-                fontSize: 35,
+                fontSize: 20,
               ),
             ),
           ),
@@ -66,15 +67,13 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 5,
             ),
-            const NameWidget('Twoja ilość powodów do wdzięczności'),
+            const NameWidgetAchive('Twoja ilość powodów do wdzięczności'),
             const SizedBox(
               height: 5,
             ),
-
             const GratefulCounter(),
-            const NameWidget('Twoja liczba celów do realizowania '),
+            const NameWidgetGrateful('Twoja liczba celów do realizowania'),
             const SizedBox(
-
               height: 5,
             ),
             const GoalsCounter(),
