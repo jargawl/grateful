@@ -5,6 +5,7 @@ import 'package:thankfulness/App/core/enums.dart';
 import 'package:thankfulness/App/injection_container.dart';
 import 'package:thankfulness/features/MotivationTips/cubit/motivation_cubit.dart';
 import 'package:thankfulness/features/MotivationTips/model/motivation_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MotivationPage extends StatelessWidget {
   const MotivationPage({Key? key}) : super(key: key);
@@ -38,7 +39,8 @@ class MotivationPage extends StatelessWidget {
                 return ListView(
                   children: [
                     Text(
-                      'Odnajdź inspirację do wdzięczności, dzięki podpowiedziom:',
+                      (AppLocalizations.of(context)!
+                                .motivationTips),
                       style: GoogleFonts.pacifico(
                         color: const Color.fromARGB(255, 23, 213, 169),
                         fontSize: 35,
