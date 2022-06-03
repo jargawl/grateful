@@ -65,7 +65,7 @@ void main() {
         ],
       );
     });
-    group('failer', () {
+    group('failure', () {
       setUp(() {
         when(() => repository.getMotivationModels()).thenThrow(
           Exception('test-exception-error'),

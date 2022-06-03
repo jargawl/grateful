@@ -8,4 +8,3 @@ class MotivationState with _$MotivationState {
     String? errorMessage,
   }) = _MotivationState;
 }
-
