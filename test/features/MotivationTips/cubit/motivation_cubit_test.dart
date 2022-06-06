@@ -71,21 +71,21 @@ void main() {
           Exception('test-exception-error'),
         );
       });
-    });
 
-    blocTest<MotivationCubit, MotivationState>(
-      'emits status.loading then Status.error with error message ',
-      build: () => sut,
-      act: (cubit) => cubit.start(),
-      expect: () => [
-        MotivationState(
-          status: Status.loading,
-        ),
-        MotivationState(
-          status: Status.error,
-          errorMessage: 'Exception: test-exepciton-error',
-        )
-      ],
-    );
+      blocTest<MotivationCubit, MotivationState>(
+        'emits status.loading then Status.error with error message ',
+        build: () => sut,
+        act: (cubit) => cubit.start(),
+        expect: () => [
+          MotivationState(
+            status: Status.loading,
+          ),
+          MotivationState(
+            status: Status.error,
+            errorMessage: 'Exception: test-exception-error',
+          )
+        ],
+      );
+    });
   });
 }
