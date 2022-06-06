@@ -9,7 +9,7 @@ import '../../../../App/core/enums.dart';
 part 'goals_state.dart';
 
 class GoalsCubit extends Cubit<GoalsState> {
-  GoalsCubit(this._goalsRepositories)
+  GoalsCubit( this.goalsRepositories)
       : super(
           const GoalsState(
             documents: [],
@@ -17,7 +17,7 @@ class GoalsCubit extends Cubit<GoalsState> {
             status: Status.initial,
           ),
         );
-  final GoalsRepositories _goalsRepositories;
+  final GoalsRepositories goalsRepositories;
   StreamSubscription? _streamSubscription;
 
   Future<void> start() async {
@@ -29,7 +29,7 @@ class GoalsCubit extends Cubit<GoalsState> {
       ),
     );
 
-    _streamSubscription = _goalsRepositories.getItemsStream().listen(
+    _streamSubscription = goalsRepositories.getItemsStream().listen(
       (data) {
         emit(
           GoalsState(
@@ -54,13 +54,13 @@ class GoalsCubit extends Cubit<GoalsState> {
     required document,
     required id,
   }) async {
-    await _goalsRepositories.delete(id: document.id);
+    await goalsRepositories.delete(id: document.id);
   }
 
   Future<void> add({
     required String name,
   }) async {
-    _goalsRepositories.add(name: name);
+    goalsRepositories.add(name: name);
   }
 
   @override
