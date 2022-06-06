@@ -11,7 +11,7 @@ class NameWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 400,
+      width: 1500,
       decoration: const BoxDecoration(
         color: Color.fromARGB(255, 23, 213, 169),
         borderRadius: BorderRadius.all(

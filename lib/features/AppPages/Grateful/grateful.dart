@@ -64,6 +64,7 @@ class GratefulPage extends StatelessWidget {
             fontSize: 20,
           ),
         ),
+        centerTitle: true,
       ),
       floatingActionButton: BlocProvider(
         create: (context) => GratefulCubit(

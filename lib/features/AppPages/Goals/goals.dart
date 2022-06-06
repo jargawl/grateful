@@ -9,7 +9,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../models/Widgets/name/name_widget.dart';
 import 'cubit/goals_cubit.dart';
 
-
 class Goals extends StatelessWidget {
   const Goals({
     Key? key,
@@ -65,6 +64,7 @@ class GoalsPage extends StatelessWidget {
             fontSize: 25,
           ),
         ),
+        centerTitle: true,
       ),
       floatingActionButton: BlocProvider(
         create: (context) => GoalsCubit(
