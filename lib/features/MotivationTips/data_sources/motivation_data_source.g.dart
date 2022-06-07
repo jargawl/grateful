@@ -6,9 +6,10 @@ part of 'motivation_data_source.dart';
 // RetrofitGenerator
 // **************************************************************************
 
+// ignore_for_file: unnecessary_brace_in_string_interps
+
 class _MotivationRemoteRetrofitDataSource
     implements MotivationRemoteRetrofitDataSource {
-  // ignore: unused_element
   _MotivationRemoteRetrofitDataSource(this._dio, {this.baseUrl});
 
   final Dio _dio;
