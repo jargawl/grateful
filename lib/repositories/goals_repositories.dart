@@ -1,6 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:injectable/injectable.dart';
 import 'package:thankfulness/data/remote_data_sources/goals_remote_data_source.dart';
 import 'package:thankfulness/models/Widgets/item/item_model.dart';
+
+@injectable
 
 class GoalsRepositories {
   GoalsRepositories(this._goalsRemoteDataSource);

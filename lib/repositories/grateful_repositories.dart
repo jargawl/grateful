@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:injectable/injectable.dart';
 import 'package:thankfulness/data/remote_data_sources/grateful_remote_data_source.dart';
 import 'package:thankfulness/models/Widgets/item/item_model.dart';
 
+@injectable
 class GratefulRepositories {
   GratefulRepositories(this._gratefulRemoteDataSource);
   final GratefulRemoteDataSource _gratefulRemoteDataSource;

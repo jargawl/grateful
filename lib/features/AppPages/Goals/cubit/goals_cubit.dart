@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:thankfulness/models/Widgets/item/item_model.dart';
 import 'package:thankfulness/repositories/goals_repositories.dart';
@@ -8,6 +9,7 @@ import '../../../../App/core/enums.dart';
 
 part 'goals_state.dart';
 
+@injectable
 class GoalsCubit extends Cubit<GoalsState> {
   GoalsCubit( this.goalsRepositories)
       : super(

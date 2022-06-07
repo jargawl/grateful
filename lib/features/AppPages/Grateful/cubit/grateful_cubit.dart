@@ -1,12 +1,13 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:thankfulness/App/core/enums.dart';
 import 'package:thankfulness/repositories/grateful_repositories.dart';
 import '../../../../models/Widgets/item/item_model.dart';
 
 part 'grateful_state.dart';
-
+@injectable
 class GratefulCubit extends Cubit<GratefulState> {
   GratefulCubit(this._itemRepositories)
       : super(

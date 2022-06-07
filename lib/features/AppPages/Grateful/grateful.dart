@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:thankfulness/App/core/config.dart';
+import 'package:thankfulness/App/injection_container.dart';
 import 'package:thankfulness/data/remote_data_sources/grateful_remote_data_source.dart';
 import 'package:thankfulness/features/AppPages/Grateful/cubit/grateful_cubit.dart';
 import 'package:thankfulness/models/Widgets/name/name_widget.dart';
@@ -66,12 +67,10 @@ class GratefulPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      floatingActionButton: BlocProvider(
-        create: (context) => GratefulCubit(
-          GratefulRepositories(
-            GratefulRemoteDataSource(),
-          ),
-        ),
+      floatingActionButton: BlocProvider<GratefulCubit>(
+        create: (context) {
+          return getIt();
+        },
         child: BlocBuilder<GratefulCubit, GratefulState>(
           builder: (context, state) {
             return FloatingActionButton(
@@ -89,12 +88,10 @@ class GratefulPage extends StatelessWidget {
           },
         ),
       ),
-      body: BlocProvider(
-        create: (context) => GratefulCubit(
-          GratefulRepositories(
-            GratefulRemoteDataSource(),
-          ),
-        )..start(),
+      body: BlocProvider<GratefulCubit>(
+        create: (context) {
+          return getIt()..start();
+        },
         child: BlocBuilder<GratefulCubit, GratefulState>(
           builder: (context, state) {
             if (state.status == Status.error) {
