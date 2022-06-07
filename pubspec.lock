@@ -661,11 +661,7 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "1.8.2"
-=======
-    version: "1.8.1"
->>>>>>> ebb7186cae8374d442ee002cded0043973447448
   path_drawing:
     dependency: transitive
     description:
