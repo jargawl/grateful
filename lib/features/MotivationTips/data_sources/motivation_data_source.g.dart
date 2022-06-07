@@ -10,7 +10,6 @@ part of 'motivation_data_source.dart';
 
 class _MotivationRemoteRetrofitDataSource
     implements MotivationRemoteRetrofitDataSource {
-  // ignore: unused_element
   _MotivationRemoteRetrofitDataSource(this._dio, {this.baseUrl});
 
   final Dio _dio;
