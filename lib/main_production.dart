@@ -5,7 +5,6 @@ import 'package:thankfulness/App/injection_container.dart';
 import 'package:thankfulness/firebase_options.dart';
 import 'App/app.dart';
 
-
 void main() async {
   Config.appFlavor = Flavor.production;
   configureDependencies();

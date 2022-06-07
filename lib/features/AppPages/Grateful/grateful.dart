@@ -3,10 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:thankfulness/App/core/config.dart';
 import 'package:thankfulness/App/injection_container.dart';
-import 'package:thankfulness/data/remote_data_sources/grateful_remote_data_source.dart';
 import 'package:thankfulness/features/AppPages/Grateful/cubit/grateful_cubit.dart';
 import 'package:thankfulness/models/Widgets/name/name_widget.dart';
-import 'package:thankfulness/repositories/grateful_repositories.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../App/core/enums.dart';
 
