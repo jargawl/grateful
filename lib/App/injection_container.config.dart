@@ -40,8 +40,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => registerModule.dio(get<String>(instanceName: 'BaseUrl')));
   gh.factory<_i8.GoalsCubit>(
       () => _i8.GoalsCubit(get<_i4.GoalsRepositories>()));
-  gh.factory<_i9.GratefulCubit>(
-      () => _i9.GratefulCubit(get<_i6.GratefulRepositories>()));
+  gh.factory<_i9.GratefulCubit>(() =>
+      _i9.GratefulCubit(gratefulRepositories: get<_i6.GratefulRepositories>()));
   gh.factory<_i10.MotivationRemoteRetrofitDataSource>(
       () => _i10.MotivationRemoteRetrofitDataSource(get<_i7.Dio>()));
   gh.factory<_i11.MotivationRepository>(() => _i11.MotivationRepository(

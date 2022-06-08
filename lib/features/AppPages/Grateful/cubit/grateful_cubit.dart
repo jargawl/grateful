@@ -7,9 +7,10 @@ import 'package:thankfulness/repositories/grateful_repositories.dart';
 import '../../../../models/Widgets/item/item_model.dart';
 
 part 'grateful_state.dart';
+
 @injectable
 class GratefulCubit extends Cubit<GratefulState> {
-  GratefulCubit(this._itemRepositories)
+  GratefulCubit({required this.gratefulRepositories})
       : super(
           const GratefulState(
             documents: [],
@@ -18,7 +19,7 @@ class GratefulCubit extends Cubit<GratefulState> {
           ),
         );
   StreamSubscription? _streamSubscription;
-  final GratefulRepositories _itemRepositories;
+  final GratefulRepositories gratefulRepositories;
 
   Future<void> start() async {
     emit(
@@ -28,7 +29,7 @@ class GratefulCubit extends Cubit<GratefulState> {
         status: Status.loading,
       ),
     );
-    _streamSubscription = _itemRepositories.getItemsStream().listen(
+    _streamSubscription = gratefulRepositories.getItemsStream().listen(
       (data) {
         emit(
           GratefulState(
@@ -53,13 +54,13 @@ class GratefulCubit extends Cubit<GratefulState> {
     required document,
     required id,
   }) async {
-    await _itemRepositories.delete(id: document.id);
+    await gratefulRepositories.delete(id: document.id);
   }
 
   Future<void> add({
     required String name,
   }) async {
-    _itemRepositories.add(name: name);
+    gratefulRepositories.add(name: name);
   }
 
   @override
