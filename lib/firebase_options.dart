@@ -57,11 +57,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBwhv2laQ1tinyCvpB5zM9jNnEv-kaRYMo',
-    appId: '1:282555915868:ios:47503f07323972526b9099',
+    appId: '1:282555915868:ios:a9fe456a45ab40576b9099',
     messagingSenderId: '282555915868',
     projectId: 'gratefulness-17ad3',
     storageBucket: 'gratefulness-17ad3.appspot.com',
-    iosClientId: '282555915868-so5ilj626lfj6l44ftatocs56fdgbnq2.apps.googleusercontent.com',
-    iosBundleId: 'com.jaroslawgawlik.gratefulness',
+    iosClientId: '282555915868-15p3tmrknljesqf7munklbofvf2ie4r0.apps.googleusercontent.com',
+    iosBundleId: 'gradeful',
   );
 }

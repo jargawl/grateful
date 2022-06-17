@@ -1,12 +1,10 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutterfire_ui/auth.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:image_picker/image_picker.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({Key? key}) : super(key: key);
@@ -32,8 +30,8 @@ class UserProfile extends StatelessWidget {
       ),
       children: [
         const CircleAvatar(
-          backgroundImage: AssetImage('images.avatar.jpg'),
-          radius: 150,
+          backgroundImage: AssetImage('images/avatar.jpg'),
+          radius: 80,
         ),
       ],
       providerConfigs: const [
