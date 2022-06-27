@@ -110,52 +110,70 @@ class GratefulPage extends StatelessWidget {
               return const Center(child: CircularProgressIndicator());
             }
             final itemModels = state.documents;
-            return ListView(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: TextField(
-                    controller: controller,
+            return Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(
+                    'https://media0.giphy.com/media/vWSBsXFFZOdXO6rJYM/giphy.gif?cid=6c09b95245n48aszelfom5zs77m08y1jnyeubkv331ij1l9q&rid=giphy.gif&ct=ts',
                   ),
                 ),
-                for (final itemModel in itemModels) ...[
-                  BlocBuilder<GratefulCubit, GratefulState>(
-                    builder: (context, state) {
-                      return Dismissible(
-                        key: ValueKey(itemModel.id),
-                        background: const DecoratedBox(
-                          child: Align(
-                            alignment: Alignment.centerRight,
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                right: 32,
-                              ),
-                              child: Icon(
-                                Icons.delete,
+              ),
+              child: ListView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Container(
+                      color: const Color.fromARGB(255, 233, 227, 213),
+                      child: TextField(
+                        controller: controller,
+                        decoration: InputDecoration(
+                          hintStyle: GoogleFonts.pacifico(),
+                          hintText:
+                              (AppLocalizations.of(context)!.enterGratitude),
+                          border: const OutlineInputBorder(),
+                        ),
+                      ),
+                    ),
+                  ),
+                  for (final itemModel in itemModels) ...[
+                    BlocBuilder<GratefulCubit, GratefulState>(
+                      builder: (context, state) {
+                        return Dismissible(
+                          key: ValueKey(itemModel.id),
+                          background: const DecoratedBox(
+                            child: Align(
+                              alignment: Alignment.centerRight,
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                  right: 32,
+                                ),
+                                child: Icon(
+                                  Icons.delete,
+                                ),
                               ),
                             ),
+                            decoration: BoxDecoration(
+                              color: Colors.red,
+                            ),
                           ),
-                          decoration: BoxDecoration(
-                            color: Colors.red,
+                          confirmDismiss: (direction) async {
+                            return direction == DismissDirection.endToStart;
+                          },
+                          onDismissed: (_) {
+                            context.read<GratefulCubit>().delete(
+                                  document: itemModel,
+                                  id: itemModel.id,
+                                );
+                          },
+                          child: NameWidget(
+                            itemModel.name,
                           ),
-                        ),
-                        confirmDismiss: (direction) async {
-                          return direction == DismissDirection.endToStart;
-                        },
-                        onDismissed: (_) {
-                          context.read<GratefulCubit>().delete(
-                                document: itemModel,
-                                id: itemModel.id,
-                              );
-                        },
-                        child: NameWidget(
-                          itemModel.name,
-                        ),
-                      );
-                    },
-                  ),
+                        );
+                      },
+                    ),
+                  ],
                 ],
-              ],
+              ),
             );
           },
         ),
