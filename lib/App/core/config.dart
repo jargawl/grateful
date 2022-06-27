@@ -19,10 +19,10 @@ class Config {
   static String get baseUrl {
     switch (appFlavor) {
       case Flavor.development:
-        return 'http://my-json-server.typicode.com/iwonarudzinska/Examples-of-gratitude-English-json';
+        return 'http://my-json-server.typicode.com/iwonaiwonaa/Examples-of-gratitude-English-json';
 
       case Flavor.production:
-        return 'http://my-json-server.typicode.com/iwonarudzinska/Examples-of-gratitude-json';
+        return 'http://my-json-server.typicode.com/iwonaiwonaa/Examples-of-gratitude-json-';
     }
   }
 

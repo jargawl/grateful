@@ -51,6 +51,7 @@ class GoalsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
@@ -110,48 +111,68 @@ class GoalsPage extends StatelessWidget {
           }
           final itemModels = state.documents;
 
-          return ListView(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(10),
-                child: TextField(controller: controller),
+          return Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(
+                  'https://i.pinimg.com/originals/68/be/38/68be3817af3f1073e658aed3c2b82e88.jpg',
+                ),
+                fit: BoxFit.cover,
               ),
-              for (final itemModel in itemModels) ...[
-                BlocBuilder<GoalsCubit, GoalsState>(
-                  builder: (context, state) {
-                    return Dismissible(
-                      key: ValueKey(itemModel.id),
-                      background: const DecoratedBox(
-                        child: Align(
-                          alignment: Alignment.centerRight,
-                          child: Padding(
-                            padding: EdgeInsets.only(
-                              right: 32,
-                            ),
-                            child: Icon(
-                              Icons.delete,
+            ),
+            child: ListView(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Container(
+                    color: const Color.fromARGB(255, 233, 227, 213),
+                    child: TextField(
+                      controller: controller,
+                      decoration: InputDecoration(
+                        hintStyle: GoogleFonts.pacifico(),
+                        hintText: (AppLocalizations.of(context)!.enterGoals),
+                        border: const OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
+                ),
+                for (final itemModel in itemModels) ...[
+                  BlocBuilder<GoalsCubit, GoalsState>(
+                    builder: (context, state) {
+                      return Dismissible(
+                        key: ValueKey(itemModel.id),
+                        background: const DecoratedBox(
+                          child: Align(
+                            alignment: Alignment.centerRight,
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                right: 32,
+                              ),
+                              child: Icon(
+                                Icons.delete,
+                              ),
                             ),
                           ),
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                          ),
                         ),
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                        ),
-                      ),
-                      confirmDismiss: (direction) async {
-                        return direction == DismissDirection.endToStart;
-                      },
-                      onDismissed: (_) {
-                        context.read<GoalsCubit>().delete(
-                              document: itemModel,
-                              id: itemModel.id,
-                            );
-                      },
-                      child: NameWidget(itemModel.name),
-                    );
-                  },
-                ),
+                        confirmDismiss: (direction) async {
+                          return direction == DismissDirection.endToStart;
+                        },
+                        onDismissed: (_) {
+                          context.read<GoalsCubit>().delete(
+                                document: itemModel,
+                                id: itemModel.id,
+                              );
+                        },
+                        child: NameWidget(itemModel.name),
+                      );
+                    },
+                  ),
+                ],
               ],
-            ],
+            ),
           );
         }),
       ),
